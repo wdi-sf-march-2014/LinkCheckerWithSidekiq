@@ -16,7 +16,9 @@ class LinksWorker
         response = Typhoeus.get(link_href)
 
         site.links.create(url: link_href, http_response: response.response_code)
-      end  
+      end
+
+      SiteMailer.site_check_email(site).deliver
     end
   end
 end

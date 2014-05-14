@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+	<body>
+    <h1>Status of the links on your site, <%= @site.url %></h1>
+
+    <table>
+    <tr>
+     <th>Link</th><th>HTTP Response Code</th>
+    </tr>
+
+    <% if @site.links %>
+      <% @site.links.each do |link| %>
+        <tr>
+          <td><%= link_to link.url %></td>
+          <% if link.http_response >= 400 %>
+            <td style="color:red">
+          <% else %>
+            <td style="color:green">
+          <% end %>
+          <%= link.http_response %></td>
+        </tr>
+      <% end %>
+    <% end %>
+
+    <p>Thank you for using the link checker!</p>
+  </body>
+</html>
