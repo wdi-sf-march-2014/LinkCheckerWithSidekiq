@@ -3,8 +3,8 @@ Status of the links on your site, <%= @site.url %>
 
 Link                                   |  Http Response Code
 
-<% if @site.links %>
-  <% @site.links.each do |link| %>
+<% if @links %>
+  <% @links.each do |link| %>
 <%= link.url %>   |    <%= link.http_response %>
   <% end %>
 <% end %>

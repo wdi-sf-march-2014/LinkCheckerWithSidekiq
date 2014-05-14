@@ -11,10 +11,10 @@
      <th>Link</th><th>HTTP Response Code</th>
     </tr>
 
-    <% if @site.links %>
-      <% @site.links.each do |link| %>
+    <% if @links %>
+      <% @links.each do |link| %>
         <tr>
-          <td><%= link_to link.url %></td>
+          <td><%= link_to link.url, link.url %></td>
           <% if link.http_response >= 400 %>
             <td style="color:red">
           <% else %>

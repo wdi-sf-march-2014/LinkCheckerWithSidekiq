@@ -3,7 +3,7 @@
 
     def status_email(site)
       @site = site
-      binding.pry
+      @links = site.links
       mail(to: @site.email, subject: 'Link Checker Status')
     end
   end
