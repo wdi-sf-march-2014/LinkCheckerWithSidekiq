@@ -1,5 +1,5 @@
   class SiteMailer < ActionMailer::Base
-    default from: "your_email_here@domain.com"
+    default from: ENV['EMAIL_FROM_ADDRESS']
 
     def status_email(site)
       @site = site
