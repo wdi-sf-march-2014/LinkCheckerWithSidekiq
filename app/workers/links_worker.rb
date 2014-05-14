@@ -18,7 +18,7 @@ class LinksWorker
         site.links.create(url: link_href, http_response: response.response_code)
       end
 
-      SiteMailer.site_check_email(site).deliver
+      SiteMailer.status_email(site).deliver
     end
   end
 end
