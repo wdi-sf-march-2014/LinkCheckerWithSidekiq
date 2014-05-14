@@ -5,7 +5,7 @@ Link                                   |  Http Response Code
 
 <% if @site.links %>
   <% @site.links.each do |link| %>
-<%= link_to link.url %>   |    <%= link.http_response %>
+<%= link.url %>   |    <%= link.http_response %>
   <% end %>
 <% end %>
 
